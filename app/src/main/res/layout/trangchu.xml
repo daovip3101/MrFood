@@ -66,9 +66,6 @@
 
         </RelativeLayout>
 
-
-
-
         <!--view 1 ô tụi bay tự gắn vô nhé + hình luôn :D -->
         <LinearLayout
             android:layout_width="wrap_content"
@@ -88,16 +85,10 @@
                 android:layout_marginLeft="@dimen/mgLxemtatca"/>
 
         </LinearLayout>
-        <HorizontalScrollView
-            android:scrollbarSize="0dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rc_mon_chinh"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
-        </HorizontalScrollView>
-
+                android:layout_height="wrap_content"/>
         <!--view 1 ô tụi bay tự gắn vô nhé + hình luôn :D -->
         <LinearLayout
             android:layout_width="wrap_content"
@@ -117,19 +108,10 @@
                 android:layout_marginLeft="@dimen/mgLxemtatca"/>
 
         </LinearLayout>
-
-        <HorizontalScrollView
-            android:scrollbarSize="0dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-
            <android.support.v7.widget.RecyclerView
                android:id="@+id/rc_mon_van_vat"
                android:layout_width="match_parent"
-               android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
-        </HorizontalScrollView>
-
+               android:layout_height="wrap_content"/>
         <!--view 1 ô tụi bay tự gắn vô nhé + hình luôn :D -->
         <LinearLayout
             android:layout_width="wrap_content"
@@ -149,23 +131,11 @@
                 android:layout_marginLeft="@dimen/mgLxemtatca"/>
 
         </LinearLayout>
-
-        <HorizontalScrollView
-            android:scrollbarSize="0dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-
            <android.support.v7.widget.RecyclerView
                android:id="@+id/rc_thuc_uong"
                android:layout_width="match_parent"
-               android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
-        </HorizontalScrollView>
+               android:layout_height="wrap_content"/>
     </LinearLayout>
-
-
-
-
     </ScrollView>
     <!-- Container for contents of drawer - use NavigationView to make configuration easier -->
     <android.support.design.widget.NavigationView
