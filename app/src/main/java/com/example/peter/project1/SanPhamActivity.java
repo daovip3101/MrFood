@@ -175,35 +175,29 @@ public class SanPhamActivity extends AppCompatActivity {
             SanPham sp = new SanPham("sp" + i, 5 + i * 10, R.drawable.garan, 1, i + 1);
             arrayList_giohang.add(sp);
         }
-//        Toast.makeText(this, "Đã load giỏ hàng from sever"+arrayList_giohang.size(), Toast.LENGTH_SHORT).show();
     }
 
     public static void setNumberBadge(int size) {
 
         Log.d("BADGE", size + "");
         badge.setNumber(size);
-
-//        Toast.makeText(DuAn1.getAppContext(), ""+size, Toast.LENGTH_SHORT).show();
     }
 
     public static void Addgiohang(SanPham sp) {
         int index = CheckSanphamTrung(sp);
         Log.d("222",""+ sp.getTenSanPha());
         if (index == -1) {
-            arrayList_giohang.add(sp);
+            SanPham sp1=new SanPham(sp.getTenSanPha(),sp.getDongia(),sp.getHinh(),sp.getSoluong(),sp.getMaSP());
+            arrayList_giohang.add(sp1);
             Log.d("111","deo trung"+sp.getTenSanPha());
             setNumberBadge(CountSizeArray(arrayList_giohang));
         } else {
             SanPham spInArrayList  =arrayList_giohang.get(index);
-            int newSoluong = spInArrayList.getSoluong();
-            newSoluong++;
+            int newSoluong = spInArrayList.getSoluong()+1;
             spInArrayList.setSoluong(newSoluong);
-            arrayList_giohang.set(index, spInArrayList);
             setNumberBadge(CountSizeArray(arrayList_giohang));
-//            Log.d("111","trung"+arrayList_giohang.size()+"-ten sp"+spInArrayList.getTenSanPha()+"-solluong"+spInArrayList.getSoluong()+"-index"+index+"\n Sau khi update"+arrayList_giohang.get(index).getSoluong());
+            Log.d("AAA","true");
         }
-
-
     }
 
     public void sendGioHangtoGiohangActivity() {
@@ -218,14 +212,8 @@ public class SanPhamActivity extends AppCompatActivity {
         if (requestCode == 1) {
             if (resultCode == Activity.RESULT_OK) {
                 arrayList_giohang = (ArrayList<SanPham>) data.getSerializableExtra("arrayListEdit");
-//                adapter.updateArralist(arrayList_giohang);
-//                adapter.notifyDataSetChanged();
-//                Toast.makeText(this, "" +arrayList_giohang.get(0).getSoluong(), Toast.LENGTH_SHORT).show();
-                setNumberBadge(CountSizeArray(arrayList_giohang));
-//                setNumberBadge(arrayList_giohang.size());
-            }
+                setNumberBadge(CountSizeArray(arrayList_giohang));}
             if (resultCode == Activity.RESULT_CANCELED) {
-                //Write your code if there's no result
             }
         }
     }
@@ -234,7 +222,6 @@ public class SanPhamActivity extends AppCompatActivity {
 
         for (int i = 0; i < arrayList_giohang.size(); i++) {
             if (sp.getMaSP() == arrayList_giohang.get(i).getMaSP()) {
-                Log.d("cac", arrayList_giohang.size()+ "");
                 return i;
             }
         }
