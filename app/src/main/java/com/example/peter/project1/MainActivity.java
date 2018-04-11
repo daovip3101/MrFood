@@ -221,7 +221,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.thoat:
                         System.exit(0);
                         break;
-
+                    case R.id.lienhe:
+                        Toast.makeText(MainActivity.this, "Ahihi", Toast.LENGTH_SHORT).show();
+                        break;
                 }
                 return false;
             }
